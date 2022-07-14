@@ -1,20 +1,23 @@
 /* header */
 
+
+/* checkbox */
 #meun_control {
-    /* position: absolute; */
     display: none;
     z-index: -2;
     opacity: 2;
 }
 
+
 .header {
+    width: 100%;
     height: 80px;
     display: flex;
     justify-content: space-between;
     
-    /* background-color: gray; */
     position: fixed;
-
+    background-color: white;
+    z-index: 2;
 }
 
 .headerleft {
@@ -22,9 +25,11 @@
     width: 35%;
 }
 
+/* 讓h1超出螢幕外,不使用none,為了讓h1可以被seo*/
 .headerleft h1 {
     position: absolute;
     top:-100px;
+    z-index: -999;
 }
 
 .headerleft img{
@@ -32,7 +37,10 @@
     height: 80px;
 }
 
-.hamgurg{
+.hamburg{
+    width: 80px;
+    height: 80px;
+
     position: relative;
 }
 
@@ -91,7 +99,9 @@
 
     z-index: 999;
 
-    /* position: absolute; */
+    position: absolute;
+
+    position: fixed;
 
     /* top:logo height */
     top: 80px;
