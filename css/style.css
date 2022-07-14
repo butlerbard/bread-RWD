@@ -273,6 +273,8 @@
 }
 
 .footer_content {
+    text-decoration: none;
+    color: black;
     padding: 15px 0;
 }
 
