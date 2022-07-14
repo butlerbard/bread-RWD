@@ -278,8 +278,9 @@
 }
 
 .footer_content p{
-    text-decoration: none;
-    color: black;
+    -moz-text-decoration-color:none;
+
+
 }
 
 
