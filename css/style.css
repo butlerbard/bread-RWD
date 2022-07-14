@@ -1,0 +1,354 @@
+/* header */
+
+#meun_control {
+    /* position: absolute; */
+    display: none;
+    z-index: -2;
+    opacity: 2;
+}
+
+.header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+
+
+    /* background-color: gray; */
+    position: relative;
+}
+
+.headerleft {
+    display: flex;
+    width: 35%;
+}
+
+.headerleft h1 {
+    /* display: none; */
+    /* opacity: 0; */
+    position: absolute;
+    top:-100px;
+}
+
+/* 漢堡選單製作 */
+.meun_btn {
+    width: 80px;
+    height: 80px;
+
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.meun_btn::before {
+    content: "";
+
+    /* 設定線條長度及寬度 */
+    height: 5px;
+    width: 35px;
+    left: 22.5px;
+
+    /* 設定線條顏色 */
+    background-color: #aaa;
+
+    /* 設定位置 */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    /* 置中 */
+    margin: auto;
+    /* 利用陰影特效創造線條 */
+    box-shadow: 0px 10px 0px #aaa, 0px -10px 0px #aaa;
+}
+
+/* 隱藏選單位置的字 ,可省略製作該部分*/
+.header span {
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    display: block;
+    overflow: hidden;
+}
+
+/* 漢堡選單製作結束 */
+
+
+.header nav {
+    background-color: #fff4ed;
+
+    /* set width & height */
+    width: 100%;
+    /* 100vh-logo height */
+    height: calc(100vh - 80px);
+
+    z-index: 999;
+
+    position: absolute;
+
+    /* top:logo height */
+    top: 80px;
+    right: 0;
+
+    /* hidden */
+    display: none;
+}
+
+.header nav a {
+    display: block;
+
+    font-size: 25px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+
+    border-bottom: 1px solid #eee;
+
+}
+
+
+/* clicked : appear <-> disappear*/
+#meun_control:checked~.header nav {
+    display: block;
+}
+
+
+
+/* content */
+.content {
+    width: 100%;
+}
+
+.content .introduce {
+    position: relative;
+
+    margin-bottom: 20px;
+}
+
+
+.introduce img {
+    width: 100%;
+    /* height: calc(100vh - 50px); */
+    opacity: 0.4;
+}
+
+.introduce .news {
+    padding: 25px;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.news p {
+    font-size: 25px;
+    color: brown;
+    font-weight: bold;
+    font-style: italic;
+    font-family: cursive;
+
+    margin-bottom: 10px;
+}
+
+.about {
+    padding: 0 20px;
+}
+
+.about h2 {
+    font-size: 30px;
+    font-weight: 700;
+
+    border-left: 5px solid rgb(223, 76, 46);
+
+    margin-bottom: 10px;
+}
+
+.about p {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+
+
+.category {
+    padding: 20px 20px 0 20px;
+}
+
+.category h2 {
+    font-size: 30px;
+    font-weight: 700;
+
+    border-left: 5px solid rgb(223, 76, 46);
+
+    margin-bottom: 10px;
+}
+
+.category_list {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.category_list div {
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+
+.category_list div img {
+    width: 100%;
+    height: 80%;
+    border-radius: 30px;
+}
+
+
+.category_list div a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.category_list div a h3 {
+    height: 20%;
+    padding-top: 5px;
+}
+
+
+.option {
+    width: 100%;
+    padding: 20px;
+}
+
+.option h2 {
+    font-size: 30px;
+    font-weight: 700;
+
+    border-left: 5px solid rgb(223, 76, 46);
+
+    margin-bottom: 10px;
+}
+
+.option div {
+    margin-bottom: 20px;
+}
+
+.option img {
+    width: 100%;
+}
+
+.optioncontent a {
+    display: block;
+
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+
+    padding: 10px 0 0 0;
+
+}
+
+.optioncontent p {
+    text-align: center;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+
+.footer {
+    background-color: #eee;
+
+    text-align: center;
+
+    padding: 15px 0;
+}
+
+.footer_content {
+    padding: 15px 0;
+}
+
+
+.statement p {
+    font-size: 15px;
+}
+
+
+
+/* rwd  min-width:768px */
+@media screen and (min-width:768px) {
+    .header {
+        display: unset;
+        position: unset;
+        display: flex;
+    }
+
+    .meun_btn {
+        display: none;
+    }
+
+    .header nav {
+        height: unset;
+        display: block;
+        display: flex;
+        position: unset;
+        background-color: unset;
+        justify-content: end;
+    }
+
+    .header nav a {
+        font-size: 20px;
+        border: none;
+        padding: 0 10px;
+        line-height: 80px;
+    }
+
+    .header nav a:hover {
+        background-color: #eee;
+    }
+
+    .introduce {
+        height: 350px;
+    }
+
+    .introduce img {
+        height: 100%;
+    }
+
+    .about, .category, .option{
+        width: 75%;
+        margin: 0 auto;
+    }
+    
+    .category_list div {
+        width: 25%;
+    }
+
+    .option div {
+        display: flex;
+    }
+
+    .option div img{
+        width: 60%;
+        height: 60%;
+    }
+
+    .optioncontent {
+        flex-direction: column;
+        
+    }
+
+    .optioncontent a{
+        text-align: left;
+        padding: 0px 0px 0px 20px;
+    }
+
+    .optioncontent p{
+        text-align: left;
+        padding: 0 0 0 20px;
+    }
+
+}
